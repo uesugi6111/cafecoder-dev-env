@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  db:
+    build: ./cafecoder-rs/test_db/
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    network_mode: "bridge"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=earlgray
+      - MYSQL_PASSWORD=329issocute
+    ports:
+      - "3306:3306" 
